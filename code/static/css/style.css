@@ -55,3 +55,34 @@ table{
   width: 100%;
   z-index: 1;
 }
+
+
+.sentimentbar{
+    height: 60px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: small;
+    float:left;
+}
+
+.bar1{
+    height: 100%;
+    background-color: #45B29D;
+    float:left;
+    padding-top: 17px;
+}
+.bar2{
+    height: 100%;
+    background-color: #EFC94C;
+    float:left;
+    padding-top: 17px;
+}
+.bar3{
+    height: 100%;
+    background-color: #DF5A49;
+    float:left;
+    padding-top: 17px;
+}

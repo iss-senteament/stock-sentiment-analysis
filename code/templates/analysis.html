@@ -53,12 +53,26 @@
 			<hr/>
 
 			<div class="flex items-center space-x-4">
-				The summary table calculate and summarize aggregated score from news and provide a recommended action.
+				Recommnedation from model : &nbsp; <span id="recommned"/>
+			</div>
+			<div class="flex items-center space-x-4">
+				Sentiment Bar
+			</div>
+			<div class="flex items-center space-x-4">
+				<div id="sentimentbar" class="sentimentbar"></div>
+				
 			</div>
 
+			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
+
 			<div class="flex items-center space-x-4">
-				{{ summary|safe }}
+				<div name="legent" style="float:left">
+					<div style="float:left; padding-left: 10px"><div class="bar1" style="width: 20px; height: 15px; "></div>Positive</div>
+					<div style="float:left; padding-left: 10px"><div class="bar2" style="width: 20px; height: 15px; float:left">&nbsp;</div>Neutral</div>
+					<div style="float:left; padding-left: 10px"><div class="bar3"  style="width: 20px; height: 15px; float:left">&nbsp;</div>Negative</div>
+				</div>
 			</div>
+			
 			<div class="htmx-indicator h-4 w-2 bg-blue-500 invisible rounded-full"></div>
 			<div class="flex items-center space-x-4">
 				<a class="underline" href="/">Back</a>
@@ -68,12 +82,41 @@
 </body>
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 	var graph_hourly = {{ graph_sentiment | safe}};
 	Plotly.plot('chart', graph_hourly, {});
 
 	var graph_price = {{ graph_price | safe}};
 	Plotly.newPlot('chart2', graph_price, {});
+
+	var sentiment_bar = {{ summary | safe }};
+	//var sentiment_bar = {"Positive Aggscore":{"1":4.2630631924},"Neutral Aggscore":{"1":0.0},"Negative Aggscore":{"1":-0.949606061},"Positive Count":{"1":6},"Neutral Count":{"1":5},"Negative Count":{"1":1},"Recommend":{"1":"Neutral"}};
+	var pos_count = sentiment_bar["Positive Count"]["1"];
+	var neu_count = sentiment_bar["Neutral Count"]["1"];
+	var neg_count = sentiment_bar["Negative Count"]["1"];
+	var recommned = sentiment_bar["Recommend"]["1"];
+	$('#recommned').append(recommned);
+
+	function round(num){
+		return Math.round(num * 100) / 100;
+	}
+
+	var total_count = pos_count + neu_count + neg_count;
+	if(total_count>0){
+		var pos_percent = pos_count / total_count * 100;
+		var neu_percent = neu_count / total_count * 100;
+		var neg_percent = neg_count / total_count * 100;
+		console.log("pos_percent" , pos_percent);
+		console.log("neu_percent" , neu_percent);
+		console.log("neg_percent" , neg_percent);
+		
+		$("#sentimentbar").append("<div class=\"bar1\" style=\"width:" + round(pos_percent) + "%\">" + round(pos_percent) + "%</div>");
+		$("#sentimentbar").append("<div class=\"bar2\" style=\"width:" + round(neu_percent) + "%\">"  + round(neu_percent) + "%</div>");
+		$("#sentimentbar").append("<div class=\"bar3\" style=\"width:" + round(neg_percent) + "%\">"  + round(neg_percent) + "%</div>");
+			
+	}
+	
 </script>
 
 </html>

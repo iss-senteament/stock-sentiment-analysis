@@ -115,10 +115,10 @@ def analyze():
     # 7. Make the Headline column clickable
     # scored_news_df['Headline'] = scored_news_df['Headline'].apply(lambda title: f'<a href="{title[1]}">{title[0]}</a>')
     scored_news_df = convert_headline_to_link(scored_news_df)
-    scored_news_df = scored_news_df.drop(['sentiment_label', 'sentiment_score'], axis=1)
-    # scored_news_df = scored_news_df.rename(columns={"sentiment_label": "Sentiment Label",
-    #                                                 "sentiment_score": "Sentiment Score",
-    #                                                 })
+    #scored_news_df = scored_news_df.drop(['sentiment_label', 'sentiment_score'], axis=1)
+    scored_news_df = scored_news_df.rename(columns={"sentiment_label": "Sentiment Label",
+                                                    "sentiment_score": "Sentiment Score",
+                                                    })
 
     summary_df = calc_summary()
 
@@ -128,7 +128,9 @@ def analyze():
     return render_template('analysis.html', ticker=ticker, graph_price=graph_price, 
                            graph_sentiment=graph_sentiment, 
                            table=scored_news_df.to_html(table_id='scored_news', classes='mystyle', render_links=True, escape=False),
-                           summary=summary_df.to_html(table_id='summary',classes='mystyle', render_links=True, escape=False))
+                           #summary=summary_df.to_html(table_id='summary',classes='mystyle', render_links=True, escape=False)
+                           summary=summary_df.to_json()
+                           )
 
 
 def convert_headline_to_link(df: pd.DataFrame) -> pd.DataFrame:
