@@ -1,0 +1,57 @@
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+a,
+h1,
+h2 {
+    color: #377ba8;
+}
+
+h1,
+h2 {
+    margin: 0;
+}
+
+h1 {
+    border-bottom: 2px solid #eee;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+dataframe,
+.mystyle th,
+.mystyle td {
+    border: none;
+    border-bottom: 1px solid #C8C8C8;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 0.8em;
+}
+
+table{
+    width: 100%;
+}
+
+.mystyle thead{
+    background-color: #377ba8;
+    color: #FFFFFF;
+}
+
+.topBanner {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #060606;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: x-small;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
