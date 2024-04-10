@@ -9,6 +9,7 @@ from plotly.utils import PlotlyJSONEncoder
 
 from sentiment.FinbertSentiment import FinbertSentiment
 from yahoo_api import API
+from datetime import datetime
 
 EST = pytz.timezone('US/Eastern')
 
@@ -71,10 +72,13 @@ def plot_sentiment(df: pd.DataFrame, ticker: str) -> go.Figure:
 
 def get_earliest_date(df: pd.DataFrame) -> pd.Timestamp:
 
-    date = df['Date Time'].iloc[-1]
-    py_date = date.to_pydatetime()
-    #return py_date.replace(tzinfo=EST)
-    return py_date.astimezone(tz=EST) # To return the earliest time in EST
+    if len(df['Date Time']) > 0:
+        date = df['Date Time'].iloc[-1]
+        py_date = date.to_pydatetime()
+        #return py_date.replace(tzinfo=EST)
+        return py_date.astimezone(tz=EST) # To return the earliest time in EST
+    else:
+        return datetime.now(tz=EST)
 
 
 def plot_hourly_price(df, ticker) -> go.Figure:

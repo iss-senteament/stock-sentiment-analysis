@@ -32,8 +32,9 @@ class SentimentAnalysisBase():
         
         df_plot = df_plot.rename(columns={'sentiment_score' : 'Sentiment Score'})
 
-        print(df_plot.head(5))
-
-        fig = px.bar(data_frame=df_plot, x=df_plot['Date Time'], y=df_plot[f'Sentiment Score'],
+        # fig = px.bar(data_frame=df_plot, x=df_plot['Date Time'], y=df_plot[f'Sentiment Score'],
+        #              title=f"{self.symbol} Hourly Sentiment Scores")
+        
+        fig = px.bar(data_frame=df_plot, x=df_plot['Date Time'], y="Sentiment Score",
                      title=f"{self.symbol} Hourly Sentiment Scores")
         return fig
