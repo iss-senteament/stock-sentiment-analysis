@@ -119,6 +119,8 @@ def analyze():
     summary_df = calc_summary()
 
     # 8. render output
+    scored_news_df.index = scored_news_df.index + 1
+    summary_df.index = summary_df.index +1
     return render_template('analysis.html', ticker=ticker, graph_price=graph_price, 
                            graph_sentiment=graph_sentiment, 
                            table=scored_news_df.to_html(table_id='scored_news', classes='mystyle', render_links=True, escape=False),
