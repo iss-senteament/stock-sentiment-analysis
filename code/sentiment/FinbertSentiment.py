@@ -17,7 +17,7 @@ class FinbertSentiment (SentimentAnalysisBase):
         model = AutoModelForSequenceClassification.from_pretrained(config.MODEL)
         self._sentiment_analysis  = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
         
-        self.model = joblib.load('RandomForestClassifier.pkl')
+        self.model = joblib.load('senTEAMentanalysis.pkl')
         super().__init__()
 
     def calc_sentiment_score(self):
@@ -26,8 +26,8 @@ class FinbertSentiment (SentimentAnalysisBase):
         #print(self.df.head(8))
         self.df['sentiment_label'] = self.df['sentiment'].apply(lambda x : x[0]["label"])
         #print(self.df.head(8))
-        self.df['sentiment_score'] = self.df['sentiment'].apply(
-            lambda x: {x[0]['label'] == 'negative': -1, x[0]['label'] == 'positive': 1}.get(True, 0) * x[0]['score'])
+        self.df['sentiment_score'] = round(self.df['sentiment'].apply(
+            lambda x: {x[0]['label'] == 'negative': -1, x[0]['label'] == 'positive': 1}.get(True, 0) * x[0]['score']),3)
 
     def calc_summary(self):
         positive_count=[]

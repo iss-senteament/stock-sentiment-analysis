@@ -38,23 +38,25 @@
 				</tr>
 			</table>
 
+
 			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
 
+			
 			<div class="flex items-center space-x-4">
 				The above chart averages the sentiment scores and price of {{ticker}} stock.
 				The table below gives each of the most recent headlines of the stock and the negative, neutral, positive
 				and an aggregated sentiment score.
 				The news headlines are obtained from Mboum Finance API.
 			</div>
-			<div class="flex items-center space-x-4">
-				{{ table|safe }}
-			</div>
 
-			<hr/>
+			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
 
 			<div class="flex items-center space-x-4">
-				Recommnedation from model : &nbsp; <span id="recommned"/>
+				<span style="font-size: larger;">Recommendation from model : &nbsp; <span id="recommned"/></span>
 			</div>
+
+			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
+
 			<div class="flex items-center space-x-4">
 				Sentiment Bar
 			</div>
@@ -62,7 +64,6 @@
 				<div id="sentimentbar" class="sentimentbar"></div>
 				
 			</div>
-
 			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
 
 			<div class="flex items-center space-x-4">
@@ -72,6 +73,19 @@
 					<div style="float:left; padding-left: 10px"><div class="bar3"  style="width: 20px; height: 15px; float:left">&nbsp;</div>Negative</div>
 				</div>
 			</div>
+
+			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full"></div>
+
+			
+
+			<div class="flex items-center space-x-4">
+				{{ table|safe }}
+			</div>
+
+			<hr/>
+
+			
+			
 			
 			<div class="htmx-indicator h-4 w-2 bg-blue-500 invisible rounded-full"></div>
 			<div class="flex items-center space-x-4">
