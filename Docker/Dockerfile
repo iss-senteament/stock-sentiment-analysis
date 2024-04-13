@@ -9,6 +9,4 @@ RUN pip install --upgrade pip && \
 
 COPY ./code .
 
-ENV RAPIDAPI_KEY=
-
 ENTRYPOINT [ "python", "app.py" ]
