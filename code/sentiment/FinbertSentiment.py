@@ -51,7 +51,7 @@ class FinbertSentiment (SentimentAnalysisBase):
         
         self.summary_df = pd.DataFrame({'positive_aggscore': positive_aggscore, 'neutral_aggscore': neutral_aggscore,  'negative_aggscore': negative_aggscore,'positive_count': positive_count,'neutral_count': neutral_count, "negative_count": negative_count})
         
-        d = {'0': 'Sell', '1': 'Neutral', '2': 'Buy'}
+        d = {'0': 'Buy', '1': 'Hold', '2': 'Sell'}
         result = self.model.predict(self.summary_df)
         resultStr = d.get(str(result[0]))
         r = pd.DataFrame({'recommend': [resultStr]})
