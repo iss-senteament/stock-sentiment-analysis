@@ -1,8 +1,7 @@
 ## SECTION 1 : PROJECT TITLE
 ---
 ### Financial Sentiment Recommender
-![image banner]([./img/banner.png](./img/banner.png))
-![image-20210725215341011](./img/banner.png)
+![image-banner](./img/banner.png)
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
 ---
