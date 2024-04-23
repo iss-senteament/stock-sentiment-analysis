@@ -1,7 +1,7 @@
 ## SECTION 1 : PROJECT TITLE
 ---
 ### Financial Sentiment Recommender
-![[Pasted image https://github.com/iss-senteament/stock-sentiment-analysis/blob/0367d2e51713b1c59f7c69f440906132a9855b35/img/banner.png]]
+![banner]([./pictures/image.png](https://github.com/iss-senteament/stock-sentiment-analysis/blob/0367d2e51713b1c59f7c69f440906132a9855b35/img/banner.png))
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
 ---
