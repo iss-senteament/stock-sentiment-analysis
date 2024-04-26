@@ -5,12 +5,10 @@ import joblib
 from config import config
 
 
-class FinbertSentiment (SentimentAnalysisBase):
+class SentimentAnalysis (SentimentAnalysisBase):
 
     def __init__(self):
 
-        # self._sentiment_analysis = pipeline(
-        #     "sentiment-analysis", model="ProsusAI/finbert")
         print('Loading Tokenizer : ' , config.TOKENIZER)
         tokenizer = AutoTokenizer.from_pretrained(config.TOKENIZER)
         print('Loading Model : ' , config.MODEL)

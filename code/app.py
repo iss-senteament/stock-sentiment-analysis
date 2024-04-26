@@ -7,31 +7,22 @@ import pytz
 from flask import Flask, render_template, request
 from plotly.utils import PlotlyJSONEncoder
 
-from sentiment.FinbertSentiment import FinbertSentiment
+from sentiment.SentimentAnalysis import SentimentAnalysis
 from yahoo_api import API
 from datetime import datetime
 
 EST = pytz.timezone('US/Eastern')
 
-# logging.basicConfig(filename='app_log.log',
-#                     encoding='utf-8', level=logging.DEBUG)
 
 app = Flask(__name__)
 
-
-# senteament = Senteament()
-
-# def score_news(df: pd.DataFrame):
-#     senteament.set_data(df)
-#     senteament.calc_sentiment_score()
-#     return senteament.df
 
 def get_price_history(ticker: str, earliest_datetime: pd.Timestamp) -> pd.DataFrame:
 
     return API.get_price_history(ticker, earliest_datetime)
     
 
-sentimentAlgo = FinbertSentiment()
+sentimentAlgo = SentimentAnalysis()
 
 def get_news(ticker) -> pd.DataFrame:
 
