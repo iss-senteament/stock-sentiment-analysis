@@ -25,15 +25,13 @@ The team has designed a full system architecture using a domain-specific knowled
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 ---
+[![Watch the video](./img/banner.png)](https://youtu.be/EZtqAzOxIZA)
 
-![image-banner](./img/banner.png)
-<video src= './video/fin_sentiment_recommender_marketing_video.mp4' width=180></video>
 ---
 
 ## SECTION 5 : USER GUIDE
 
 Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
-
 
 
 ---
