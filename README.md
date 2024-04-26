@@ -34,8 +34,16 @@ The team has designed a full system architecture using a domain-specific knowled
 
 Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
 
+
+
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
 Refer to project report at Github Folder: [ProjectReport](https://www.google.com)
+
+---
+
+## SECTION 7 : MISCELLANEOUS
+
+Live demo : [https://iss.justexample.com](https://iss.justexample.com)
