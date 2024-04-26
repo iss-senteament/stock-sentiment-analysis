@@ -32,7 +32,7 @@ The team has designed a full system architecture using a domain-specific knowled
 
 ## SECTION 5 : USER GUIDE
 
-Please refer to [[user guide](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
+Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
 
 ---
 
