@@ -27,7 +27,7 @@ The team has designed a full system architecture using a domain-specific knowled
 ---
 
 ![image-banner](./img/banner.png)
-
+<video src= './video/fin_sentiment_recommender_marketing_video.mp4' width=180/>
 ---
 
 ## SECTION 5 : USER GUIDE
@@ -41,6 +41,21 @@ Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentimen
 ## SECTION 6 : PROJECT REPORT / PAPER
 
 Refer to project report at Github Folder: [ProjectReport](https://www.google.com)
+1.Executive Summary
+2. Business Problem Background
+3. Project Objective and Overview
+4. Knowledge modelling
+5. System Design
+6. System Development
+7. Results & Progress
+8. Future Developments
+9. References
+Appendix
+Appendix A: Project Proposal
+Appendix B: Mapped System Functionalities
+Appendix C: Installation and User Guide
+Appendix D: Individual Project Reports
+
 
 ---
 
