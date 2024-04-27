@@ -98,17 +98,15 @@
 	var neu_count = sentiment_bar["Neutral Count"]["1"];
 	var neg_count = sentiment_bar["Negative Count"]["1"];
 	var recommend = sentiment_bar["Recommend"]["1"];
-	console.log("recommend" , recommend);
 	if(recommend == 'Buy'){
-		recommend += ' (estimated + 4.75% daily price range)';
+		recommend += ' (estimated >+ 4.75% daily price range)';
 	}else if(recommend == 'Sell'){
-		recommend += ' (estimated - 4.75% daily price range)';
+		recommend += ' (estimated <- 4.75% daily price range)';
 	}else{
-		//nothing happen
+		recommend += ' (between +/- 4.75% inclusive)';
 	}
 	$('#recommend').append(recommend);
-	console.log("recommend" , recommend);
-
+	
 	function round(num){
 		return Math.round(num * 100) / 100;
 	}
@@ -118,9 +116,9 @@
 		var pos_percent = pos_count / total_count * 100;
 		var neu_percent = neu_count / total_count * 100;
 		var neg_percent = neg_count / total_count * 100;
-		console.log("pos_percent" , pos_percent);
-		console.log("neu_percent" , neu_percent);
-		console.log("neg_percent" , neg_percent);
+		// console.log("pos_percent" , pos_percent);
+		// console.log("neu_percent" , neu_percent);
+		// console.log("neg_percent" , neg_percent);
 		
 		$("#sentimentbar").append("<div class=\"bar1\" style=\"width:" + round(pos_percent) + "%\">" + round(pos_percent) + "%</div>");
 		$("#sentimentbar").append("<div class=\"bar2\" style=\"width:" + round(neu_percent) + "%\">"  + round(neu_percent) + "%</div>");
