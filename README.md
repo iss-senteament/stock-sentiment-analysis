@@ -25,8 +25,7 @@ The team has designed a full system architecture using a domain-specific knowled
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 ---
-
-![image-banner](./img/banner.png)
+[![Watch the video](./img/banner.png)](https://youtu.be/EZtqAzOxIZA)
 
 ---
 
@@ -34,8 +33,30 @@ The team has designed a full system architecture using a domain-specific knowled
 
 Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
 
+
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
 Refer to project report at Github Folder: [ProjectReport](https://www.google.com)
+1.Executive Summary
+2. Business Problem Background
+3. Project Objective and Overview
+4. Knowledge modelling
+5. System Design
+6. System Development
+7. Results & Progress
+8. Future Developments
+9. References
+Appendix
+Appendix A: Project Proposal
+Appendix B: Mapped System Functionalities
+Appendix C: Installation and User Guide
+Appendix D: Individual Project Reports
+
+
+---
+
+## SECTION 7 : MISCELLANEOUS
+
+Live demo : [https://iss.justexample.com](https://iss.justexample.com)
