@@ -44,8 +44,6 @@ def calc_summary():
                 "recommend" : "Recommend"
                 })
     
-    #print(df.head(5))
-    #sentimentAlgo.recommend()
     return df
 
 def score_news(news_df: pd.DataFrame) -> pd.DataFrame:
@@ -66,7 +64,6 @@ def get_earliest_date(df: pd.DataFrame) -> pd.Timestamp:
     if len(df['Date Time']) > 0:
         date = df['Date Time'].iloc[-1]
         py_date = date.to_pydatetime()
-        #return py_date.replace(tzinfo=EST)
         return py_date.astimezone(tz=EST) # To return the earliest time in EST
     else:
         return datetime.now(tz=EST)
@@ -88,47 +85,37 @@ def index():
 def analyze():
 
     ticker = request.form['ticker'].strip().upper()
-    # 1. get news feed
     news_df = get_news(ticker)
-    print(news_df.head(5))
-    # 2. calculate sentiment scores
     scored_news_df = score_news(news_df)
-    # 3. create a bar diagram
-    fig_bar_sentiment = plot_sentiment(scored_news_df, ticker)
-    graph_sentiment = json.dumps(fig_bar_sentiment, cls=PlotlyJSONEncoder)
-    # 4. get earliest data time from the news data feed
-    earliest_datetime = get_earliest_date(news_df)
-    # 5. get price history for the ticker, ignore price history earlier than the news feed
-    price_history_df = get_price_history(ticker, earliest_datetime)
-    # 6. create a linear diagram
-    fig_line_price_history = plot_hourly_price(price_history_df, ticker)
-    graph_price = json.dumps(fig_line_price_history, cls=PlotlyJSONEncoder)
-    # 7. Make the Headline column clickable
-    # scored_news_df['Headline'] = scored_news_df['Headline'].apply(lambda title: f'<a href="{title[1]}">{title[0]}</a>')
-    scored_news_df = convert_headline_to_link(scored_news_df)
-    #scored_news_df = scored_news_df.drop(['sentiment_label', 'sentiment_score'], axis=1)
-    scored_news_df = scored_news_df.rename(columns={"sentiment_label": "Sentiment Label",
-                                                    "sentiment_score": "Sentiment Score",
-                                                    })
+    if not scored_news_df.empty:
+        fig_bar_sentiment = plot_sentiment(scored_news_df, ticker)
+        graph_sentiment = json.dumps(fig_bar_sentiment, cls=PlotlyJSONEncoder)
+        earliest_datetime = get_earliest_date(news_df)
+        price_history_df = get_price_history(ticker, earliest_datetime)
+        fig_line_price_history = plot_hourly_price(price_history_df, ticker)
+        graph_price = json.dumps(fig_line_price_history, cls=PlotlyJSONEncoder)
+        scored_news_df = convert_headline_to_link(scored_news_df)
+        scored_news_df = scored_news_df.rename(columns={"sentiment_label": "Sentiment Label",
+                                                        "sentiment_score": "Sentiment Score",
+                                                        })
 
-    summary_df = calc_summary()
+        summary_df = calc_summary()
 
-    # 8. render output
-    scored_news_df.index = scored_news_df.index + 1
-    summary_df.index = summary_df.index +1
-    return render_template('analysis.html', ticker=ticker, graph_price=graph_price, 
-                           graph_sentiment=graph_sentiment, 
-                           table=scored_news_df.to_html(table_id='scored_news', classes='mystyle', render_links=True, escape=False),
-                           #summary=summary_df.to_html(table_id='summary',classes='mystyle', render_links=True, escape=False)
-                           summary=summary_df.to_json()
-                           )
+        # 8. render output
+        scored_news_df.index = scored_news_df.index + 1
+        summary_df.index = summary_df.index +1
+        return render_template('analysis.html', ticker=ticker, graph_price=graph_price, 
+                            graph_sentiment=graph_sentiment, 
+                            table=scored_news_df.to_html(table_id='scored_news', classes='mystyle', render_links=True, escape=False),
+                            summary=summary_df.to_json()
+                            )
+    else:
+         return render_template('nodata.html')
 
 
 def convert_headline_to_link(df: pd.DataFrame) -> pd.DataFrame:
 
     df.insert(2, 'Headline', df['title + link'])
-
-    # df['Headline'] = df['title + link']
     df.drop(columns = ['sentiment', 'title + link', 'title'], inplace=True, axis=1)
 
     return df

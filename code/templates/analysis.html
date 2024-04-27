@@ -41,7 +41,7 @@
 			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full" style="height:50px"></div>
 
 			<div class="flex items-center space-x-4">
-				<span style="font-size: larger;">Recommendation from model : &nbsp; <span id="recommned"></span> <span>(estimated +/- 4.75% daily price range)</span></span>
+				<span style="font-size: larger;">Recommendation from model : &nbsp; <span id="recommend"></span> </span>
 			</div>
 
 			<div class="htmx-indicator h-2 w-2 bg-blue-500 invisible rounded-full" ></div>
@@ -97,8 +97,17 @@
 	var pos_count = sentiment_bar["Positive Count"]["1"];
 	var neu_count = sentiment_bar["Neutral Count"]["1"];
 	var neg_count = sentiment_bar["Negative Count"]["1"];
-	var recommned = sentiment_bar["Recommend"]["1"];
-	$('#recommned').append(recommned);
+	var recommend = sentiment_bar["Recommend"]["1"];
+	console.log("recommend" , recommend);
+	if(recommend == 'Buy'){
+		recommend += ' (estimated + 4.75% daily price range)';
+	}else if(recommend == 'Sell'){
+		recommend += ' (estimated - 4.75% daily price range)';
+	}else{
+		//nothing happen
+	}
+	$('#recommend').append(recommend);
+	console.log("recommend" , recommend);
 
 	function round(num){
 		return Math.round(num * 100) / 100;

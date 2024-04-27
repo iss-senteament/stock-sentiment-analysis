@@ -63,28 +63,32 @@ class API():
 
         respose_json = response.json()
 
-        price_history = respose_json['body']
-        data_dict = []
+        if 'body' in respose_json:
+            price_history = respose_json['body']
+            data_dict = []
 
-        print(f"earliest_datetime: {earliest_datetime}")
-        for stock_price in price_history.values():
+            print(f"earliest_datetime: {earliest_datetime}")
+            for stock_price in price_history.values():
 
-            date_time_num = stock_price["date_utc"]
-            utc_datetime = datetime.fromtimestamp(date_time_num, tz=pytz.utc)
-            est_datetime = utc_datetime.astimezone(tz=EST)
+                date_time_num = stock_price["date_utc"]
+                utc_datetime = datetime.fromtimestamp(date_time_num, tz=pytz.utc)
+                est_datetime = utc_datetime.astimezone(tz=EST)
 
-            if est_datetime < earliest_datetime:
-                continue
+                if est_datetime < earliest_datetime:
+                    continue
 
-            price = stock_price["open"]
-            data_dict.append([est_datetime.strftime(date_format), price])
+                price = stock_price["open"]
+                data_dict.append([est_datetime.strftime(date_format), price])
 
-        # Set column names
-        columns = ['Date Time', 'Price']
-        df = pd.DataFrame(data_dict, columns=columns)
-        df['Date Time'] = pd.to_datetime(df['Date Time'], format=date_format)
-        df.sort_values(by='Date Time', ascending=True)
-        df.reset_index(inplace=True)
-        df.drop('index', axis=1, inplace=True)
+            # Set column names
+            columns = ['Date Time', 'Price']
+            df = pd.DataFrame(data_dict, columns=columns)
+            df['Date Time'] = pd.to_datetime(df['Date Time'], format=date_format)
+            df.sort_values(by='Date Time', ascending=True)
+            df.reset_index(inplace=True)
+            df.drop('index', axis=1, inplace=True)
+        else:
+            print(f'No data returned for ticker: {ticker}, response: {respose_json}')
+            df = pd.DataFrame()
 
         return df
