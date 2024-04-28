@@ -31,9 +31,22 @@ The team has designed a full system architecture using a domain-specific knowled
 
 ## SECTION 5 : USER GUIDE
 
-Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
-* Option 1: Docker
-* Option 2: Python install
+You may choose various methods to access the webpage:
+* Option 1: Docker [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
+* Option 2: Git install:
+> conda create -n "envname" python=3.10
+> 
+Find a suitable folder:
+> git clone https://github.com/iss-senteament/stock-sentiment-analysis.git
+
+> pip install -r requirements.txt
+
+> set RAPIDAPI_KEY "xxxx"
+
+> cd code
+
+> python app.py
+
 * Option 3: URL (see Section 7)
 
 ---
