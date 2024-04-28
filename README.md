@@ -53,7 +53,7 @@ Find a suitable folder:
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-Refer to project report at Github Folder: [ProjectReport](https://www.google.com)
+Refer to project report at Github Folder: [ProjectReport](./ProjectReport/IRS-PM-Report-2024-05-05-%20IS06PT-GRP-SenTEAMent-Financial%20Sentiment%20Recommender.pdf)
 1. Executive Summary
 2. Business Problem Background
 3. Project Objective and Overview
