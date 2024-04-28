@@ -7,7 +7,7 @@
 ---
 The financial stock market is very important in the modern day world. It helps countries, institutional and retail investors in capital formation. Therefore, the skills or tools to better understand the stock market are relevant and highly sought after. 
 
-Understanding human decision-making in stock investment is pivotal for maximizing profits in the stock market. Sentiment analysis is one of many tools that an investor can apply in their trading strategy to attempt to gain foresight into future price movements (Deveikyte et al., 2022)1. This project aims to utilize financial sentiment analysis on news sourced from traditional and social media platforms, coupled with historical stock price movements, to design a model to provide investors/traders a prediction of the future stock price movements based on the most recent news.
+Understanding human decision-making in stock investment is pivotal for maximizing profits in the stock market. Sentiment analysis is one of many tools that an investor can apply in their trading strategy to attempt to gain foresight into future price movements (Deveikyte et al., 2022). This project aims to utilize financial sentiment analysis on news sourced from traditional and social media platforms, coupled with historical stock price movements, to design a model to provide investors/traders a prediction of the future stock price movements based on the most recent news.
 
 The team believes this project can provide investors, institutional or retail alike, valuable insights into the market sentiment trends, enabling more informed decision-making in their market investments/trades and potentially higher returns on investment.
 
@@ -15,13 +15,13 @@ The team has designed a full system architecture using a domain-specific knowled
 
 ## SECTION 3 : CREDITS / PROJECT CONTRIBUTION
 
-| Official Full Name | Student ID (MTech Applicable) | Work Items (Who Did What)                                                                                                                                                      | Email (Optional) |
-| :----------------- | :---------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------- |
-| Kenn Ng Ying Wee   |           A0111692L           | Sentiment mode training, Stock data Acquisition and Pre-processing, Social media Data Acquisition and Pre-processing, Project Report, Business Video Presentation, Tech Video. |                  |
-| Yeo Li Ying        |           A0292287R           | UI, Backend Logic, User Guide, News Data Acquisition and Pre-processing, Training data processing, Sentiment Model experimenting,Project Report.                               |                  |
-| Lai Kah Hoe        |           A0292131N           | Web UI, Backend Logic, News Data Acquisition and Pre-processing, Training data processing, Project Report.                                                                     |                  |
-| Tan Kok Tong       |           A0155101Y           | Model Training, Fact checking,News Data Acquisition and Pre-processing, Training data processing, Model training, Project Report.                                              |                  |
-|                    |                               |                                                                                                                                                                                |                  |
+| Official Full Name | Student ID (MTech Applicable) | Work Items (Who Did What)                                                                                                                                                      | 
+| :----------------- | :---------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | 
+| Kenn Ng Ying Wee   |           A0111692L           | Sentiment mode training, Stock data Acquisition and Pre-processing, Social media Data Acquisition and Pre-processing, Project Report, Business Video Presentation, Tech Video. |
+| Yeo Li Ying        |           A0292287R           | UI, Backend Logic, User Guide, News Data Acquisition and Pre-processing, Training data processing, Sentiment Model experimenting,Project Report.                               |   
+| Lai Kah Hoe        |           A0292131N           | Web UI, Backend Logic, News Data Acquisition and Pre-processing, Training data processing, Project Report.                                                                     |         
+| Tan Kok Tong       |           A0155101Y           | Model Training, Fact checking,News Data Acquisition and Pre-processing, Training data processing, Model training, Project Report.                                              |               
+|                    |                               |                                                                                                                                                                                |
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 ---
@@ -32,14 +32,16 @@ The team has designed a full system architecture using a domain-specific knowled
 ## SECTION 5 : USER GUIDE
 
 Please refer to [[user guide]](https://github.com/iss-senteament/stock-sentiment-analysis/blob/6f814cae9940a10b348dfc8b3d4631ffd3677e46/ProjectReport/UserGuide.pdf)
-
+* Option 1: Docker
+* Option 2: Python install
+* Option 3: URL (see Section 7)
 
 ---
 
 ## SECTION 6 : PROJECT REPORT / PAPER
 
 Refer to project report at Github Folder: [ProjectReport](https://www.google.com)
-1.Executive Summary
+1. Executive Summary
 2. Business Problem Background
 3. Project Objective and Overview
 4. Knowledge modelling
@@ -48,15 +50,15 @@ Refer to project report at Github Folder: [ProjectReport](https://www.google.co
 7. Results & Progress
 8. Future Developments
 9. References
-Appendix
-Appendix A: Project Proposal
-Appendix B: Mapped System Functionalities
-Appendix C: Installation and User Guide
-Appendix D: Individual Project Reports
-
+10. Appendix
+* Appendix A: Project Proposal
+* Appendix B: Mapped System Functionalities
+* Appendix C: Installation and User Guide
+* Appendix D: Individual Project Reports
 
 ---
 
 ## SECTION 7 : MISCELLANEOUS
 
+Model training code: [Jupyter Notebook](./code/Final_Training_Code_Compare.ipynb) <br>
 Live demo : [https://iss.justexample.com](https://iss.justexample.com)
